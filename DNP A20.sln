@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorAPI", "AuthorAPI\AuthorAPI.csproj", "{1E68E746-D618-41E3-B5BD-BDC2B2B7F197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorBlazor", "AuthorBlazor\AuthorBlazor.csproj", "{067EBF62-270C-46F9-9E1D-65AC77788A1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E68E746-D618-41E3-B5BD-BDC2B2B7F197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E68E746-D618-41E3-B5BD-BDC2B2B7F197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E68E746-D618-41E3-B5BD-BDC2B2B7F197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E68E746-D618-41E3-B5BD-BDC2B2B7F197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067EBF62-270C-46F9-9E1D-65AC77788A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067EBF62-270C-46F9-9E1D-65AC77788A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067EBF62-270C-46F9-9E1D-65AC77788A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067EBF62-270C-46F9-9E1D-65AC77788A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

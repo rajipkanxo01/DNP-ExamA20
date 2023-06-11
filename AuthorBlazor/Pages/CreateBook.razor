@@ -1,0 +1,110 @@
+﻿@page "/CreateBook"
+
+@using AuthorBlazor.Services.ServiceInterface
+@using AuthorAPI.Domain
+@inject IAuthorService AuthorService;
+@inject IBookService BookService;
+@inject NavigationManager NavigationManager;
+
+<h3>CreateBook</h3>
+
+<div class="card">
+    <div class="form-group field">
+        <label>ISBN:</label>
+        <input type="number" @bind="isbn" @bind:event="oninput"/>
+    </div>
+
+    <div class="form-group field">
+        <label>Title</label>
+        <input type="text" @bind="title" @bind:event="oninput"/>
+    </div>
+
+    <div class="form-group field">
+        <label>Genre</label>
+        <input type="text" @bind="genre" @bind:event="oninput"/>
+    </div>
+
+    <div class="form-group field">
+        <label>Number of Pages</label>
+        <input type="number" @bind="numOfPages" @bind:event="oninput"/>
+    </div>
+
+    <div class="form-group field">
+        <label>Publication Year: </label>
+        <input type="number" @bind="publicationYear" maxlength="4" minlength="4" @bind:event="oninput"/>
+    </div>
+
+    <div class="form-group field">
+        <label>Written By:</label>
+        <select @bind="selectedAuthorId">
+            <option>Choose</option>
+            @foreach (Author author in authors)
+            {
+                <option value="@author.Id">@author.FistName</option>
+            }
+        </select>
+    </div>
+
+
+    @if (!string.IsNullOrEmpty(msg))
+    {
+        <label style="color: @color">@msg</label>
+    }
+</div>
+
+<div class="button-row">
+    <button @onclick="Create" class="acceptbtn">Create</button>
+</div>
+
+@code {
+    private int isbn;
+    private string title = "";
+    private int publicationYear;
+    private int numOfPages;
+    private string genre = "";
+    private ICollection<Author> authors = new List<Author>();
+    private int selectedAuthorId;
+
+    private string msg = "";
+    private string color = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        authors = (ICollection<Author>)await AuthorService.GetAuthorsAsync();
+    }
+    
+    private async void Create()
+    {
+        try
+        {
+            if (isbn == 0) throw new Exception("ISBN cannot be Empty!!");
+            if (string.IsNullOrEmpty(title)) throw new Exception("Title cannot be Empty!!");
+            if (selectedAuthorId == 0) throw new Exception("Author Should Be Selected!!");
+
+            Book toCreateBook = new Book
+            {
+                Isbn = isbn,
+                Genre = genre,
+                Title = title,
+                PublicationYear = Convert.ToInt32(publicationYear),
+                NumOfPages = numOfPages
+            };
+            Book createdBook = await BookService.CreateAsync(toCreateBook, selectedAuthorId);
+
+            NavigationManager.NavigateTo("/");
+
+            isbn = 0;
+            genre = "";
+            title = "";
+            publicationYear = 0;
+            numOfPages = 0;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+            color = "red";
+        }
+    }
+
+}

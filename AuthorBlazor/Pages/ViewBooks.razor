@@ -1,0 +1,102 @@
+﻿@page "/ViewBooks"
+@inject IAuthorService AuthorService;
+@inject IBookService BookService;
+@using AuthorAPI.Domain
+@using AuthorBlazor.Services.ServiceInterface
+
+<h3>ViewBooks</h3>
+
+<div class="filter-bar">
+    <div class="filters-container">
+        <img src="icons/@(doShowFilters ? "clear_" : "")funnel.png" class="w-25 h-25" @onclick="@(() => doShowFilters = !doShowFilters)" alt="Funnel"/>
+        @if (doShowFilters)
+        {
+            <div class=" field">
+                <label>First name Filter:</label>
+                <input type="text" @bind="firstNameFilter" @bind:event="oninput"/>
+            </div>
+
+            <div class=" field">
+                <label>Title Contains Filter:</label>
+                <input type="text" @bind="titleContainsFilter" @bind:event="oninput"/>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="button-row">
+    <button @onclick="LoadBooks" class="btn-primary">Load</button>
+</div>
+
+@if (!allAuthors.Any())
+{
+    <span> No Books Found!!</span>
+}
+else
+{
+    <table class="table-bordered">
+        <thead>
+        <tr>
+            <th>Written By</th>
+            <th>Title</th>
+            <th>ISBN Number</th>
+            <th>Publication Year</th>
+            <th>Num of Pages</th>
+            <th>Genre</th>
+            <th>Delete?</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var authors in allAuthors)
+        {
+            foreach (var book in authors.WrittenBooks!)
+            {
+                <tr>
+                    <td>@authors.FistName</td>
+                    <td>@book.Title</td>
+                    <td>@book.Isbn</td>
+                    <td>@book.PublicationYear</td>
+                    <td>@book.NumOfPages</td>
+                    <td>@book.Genre</td>
+                    <td>
+                        <label @onclick="@(() => RemoveBook(book.Isbn, authors.Id))" style="cursor:pointer; color: red; font-weight: bold">
+                            &#x2717;
+                        </label>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private IEnumerable<Author> allAuthors = new List<Author>();
+
+    private string? firstNameFilter = "";
+    private string? titleContainsFilter = "";
+    private bool doShowFilters;
+
+
+    private async Task RemoveBook(int bookIsbn, int authorId)
+    {
+        try
+        {
+            await BookService.DeleteAsync(bookIsbn);
+            await LoadBooks();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+
+    private async Task LoadBooks()
+    {
+        allAuthors = (List<Author>)await AuthorService.GetAuthorsAsync(firstNameFilter, titleContainsFilter);
+     Console.WriteLine(allAuthors.Count());   
+    }
+
+}

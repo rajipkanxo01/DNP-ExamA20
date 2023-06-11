@@ -1,0 +1,58 @@
+﻿@page "/CreateAuthor"
+@using AuthorBlazor.Services.ServiceInterface
+@using AuthorAPI.Domain
+@inject IAuthorService AuthorService;
+@inject NavigationManager NavigationManager;
+<h3>CreateAuthor</h3>
+
+<div class="card">
+    <div class="form-group field">
+        <label>First name:</label>
+        <input type="text" @bind="firstName" @bind:event="oninput"/>
+    </div>
+
+    <div class="form-group field">
+        <label>Last name:</label>
+        <input type="text" @bind="lastName" @bind:event="oninput"/>
+    </div>
+
+    @if (!string.IsNullOrEmpty(msg))
+    {
+        <label style="color: @color">@msg</label>
+    }
+</div>
+
+<div class="button-row">
+    <button @onclick="Create" class="acceptbtn">Create</button>
+</div>
+
+
+@code {
+    private string firstName = "";
+    private string lastName = "";
+    private string msg = "";
+    private string color = "";
+
+
+    private async void Create()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(firstName)) throw new Exception("First Name Cannot be Null");
+            if (string.IsNullOrEmpty(lastName)) throw new Exception("Last Name Cannot be Null");
+
+            Author toCreateAuthor = new Author(firstName, lastName);
+            Author createdAuthor = await AuthorService.CreateAsync(toCreateAuthor);
+            NavigationManager.NavigateTo("/");
+            firstName = "";
+            lastName = "";
+        }
+        catch (Exception e)
+        {
+            msg = e.Message;
+            color = "red";
+            Console.WriteLine(e);
+        }
+    }
+
+}

@@ -1,0 +1,85 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\AuthorBlazor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\AuthorBlazor.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\icons\\clear_funnel.png",
+      "PackagePath": "staticwebassets\\icons\\clear_funnel.png"
+    },
+    {
+      "Id": "D:\\VIA\\SEM-3\\Projects\\DNP1\\ExamPractice\\DNP A20\\AuthorBlazor\\wwwroot\\icons\\funnel.png",
+      "PackagePath": "staticwebassets\\icons\\funnel.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.AuthorBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.AuthorBlazor.props",
+      "PackagePath": "build\\AuthorBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.AuthorBlazor.props",
+      "PackagePath": "buildMultiTargeting\\AuthorBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.AuthorBlazor.props",
+      "PackagePath": "buildTransitive\\AuthorBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
